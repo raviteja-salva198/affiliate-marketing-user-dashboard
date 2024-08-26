@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import styled from 'styled-components';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import BillingInfoForm from './components/user/BillingInfoForm/billing-info-form';
+import AdminDashboard from './components/admin/AdminDashboard/admin-dashboard';
+import Header from './components/global/Header';
+import Footer from './components/global/Footer';
 
-function App() {
+const AppContainer = styled.div`
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+`;
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <AppContainer>
+        <Header />
+        <Routes>
+        <Route path="/" element={<BillingInfoForm />} />
+        <Route path="/admin" element={<AdminDashboard />} />
+        </Routes>
+        <Footer />
+      </AppContainer>
+    </Router>
   );
-}
+};
 
 export default App;
