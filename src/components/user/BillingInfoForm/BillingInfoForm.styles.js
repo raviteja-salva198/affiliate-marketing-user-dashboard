@@ -55,7 +55,7 @@ export const Input = styled.input`
   padding: 12px 16px;
   border: 2px solid #e0e6ed;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 13px;
   transition: all 0.3s ease;
 
   &:focus {
